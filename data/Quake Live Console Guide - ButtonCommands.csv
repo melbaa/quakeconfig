@@ -1,0 +1,33 @@
++acc,Displays in-game weapon accuracy panel.
++attack,Fires weapon.
++back,Move backwards.
++button0,Fires weapon.
++button1,Display chat bubble.
++button2,Use holdable item.
++button3,Gesture.
++button4,Not used.
++button5,Animation signal – ‘Yes/I vote yes/Confirm order’ (TA models only)
++button6,Animation signal – ‘No/I vote no/Deny Order’ (TA models only)
++button7,Team order hand signal – ‘Attack/I am on offense’ (TA models only)
++button8,Team order hand signal – ‘Defend/I am defending’ (TA models only)
++button9,Team order hand signal – ‘Patrol/I am patrolling’ (TA models only)
++button10,Team order hand signal – ‘Follow me/I am following’ (TA models only)
++button11,Not used.
++button12,Not used.
++button13,Not used.
++button14,Not used.
++chat,Display the chat window.
++forward,Move forwards.
++left,Turn left.
++lookdown,Look down.
++lookup,Look up.
++mlook,Mouse look.
++movedown,Move downwards – crouch/swim down.
++moveleft,Strafe left.
++moveright,Strafe right.
++moveup,Move upwards – jump/swim up.
++right,Turn right.
++scores,Display scoreboard.
++speed,Run/Walk toggle.
++strafe,Strafe toggle.
++zoom,Zoom toggle.

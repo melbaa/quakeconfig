@@ -1,0 +1,3 @@
+*.pyc
+templates/compile/*
+notes.txt

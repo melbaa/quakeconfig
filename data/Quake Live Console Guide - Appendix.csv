@@ -1,0 +1,42 @@
+Notable CVAR Prefixes:,,,,,,,,,,,
+,8 Color Palette,26 Color Palette,Name,Hex Codes,2,2,2,2,#,Screen Resolution,Aspect Ratio
+BOT_: bot settings,1,1,Red,0xFF0000FF,255,0,0,128,-2,Desktop Res.,-
+CG_: client game settings,-,2,Orange-Red,0xFF4000FF,255,64,0,128,-1,Custom Res.,-
+CL_: client-side settings,-,3,Dark Orange,0xFF8000FF,255,128,0,128,0,320x240,(4:3)
+CM_: collision map settings,-,4,Orange,0XFFC000FF,255,192,0,128,1,400x300,(4:3)
+COM_: Common settings,3,5,Yellow,0xFFFF00FF,255,255,0,128,2,512x384,(4:3)
+FS_: game files settings,-,6,Green-Yellow,0xC0FF00FF,192,255,0,128,3,640x360,(16:9)
+G_: server-side game settings,-,7,Chartreuse,0x80FF00FF,128,255,0,128,4,640x400,(16:10)
+GT_: connection settings,-,8,Green 1,0x40FF00FF,64,255,0,128,5,640x480,(4:3)
+IN_: general input device settings,2,9,Green 2,0x00FF00FF,0,255,0,128,6,800x450,(16:9)
+JOY_: joystick input settings,-,10,Spring Green 1,0x00FF40FF,0,255,64,128,7,852x480,(16:9)
+M_: mouse input settings,-,11,Spring Green 2,0x00FF80FF,0,255,128,128,8,800x500,(16:10)
+NET_: network settings,-,12,Green-Cyan,0x00FFC0FF,0,255,192,128,9,800x600,(4:3)
+PMOVE_: player movement server settings,5,13,Cyan,0x00FFFFFF,0,255,255,128,10,1024x640,(16:10)
+R_: video rendering settings,-,14,Deep Sky Blue,0x00C0FFFF,0,192,255,128,11,1024x576,(16:9)
+S_: sound system settings,-,15,Azure,0x0080FFFF,0,128,255,128,12,1024x768,(4:3)
+SV_: server-side settings,-,16,Cobalt,0x0040FFFF,0,64,255,128,13,1152x864,(4:3)
+SYS_: system configuration settings,4,17,Blue,0x0000FFFF,0,0,255,128,14,1280x720,(16:9)
+UI_: user interface settings,-,18,Electric Ultramarine,0x4000FFFF,64,0,255,128,15,1280x768,(5:3)
+WEB_: website settings,-,19,Electric Purple,0x8000FFFF,128,0,255,128,16,1280x800,(16:10)
+,-,20,Lilac,0xC000FFFF,192,0,255,128,17,1280x1024,(5:4)
+Flags Legend:,6,21,Magenta 1,0xFF00FFFF,255,0,255,128,18,1440x900,(16:10)
+,-,22,Magenta 2,0xFF00C0FF,255,0,192,128,19,1600x900,(16:9)
+[A] Archive,-,23,Bright Pink,0xFF0080FF,255,0,128,128,20,1600x1000,(16:10)
+(saved to vars.rc),-,24,Folly,0xFF0040FF,255,0,64,128,21,1680x1050,(16:10)
+[C] Cheat-Protected,7,25,White,0xFFFFFFFF,255,255,255,255,22,1600x1200,(4:3)
+(only usable in cheat-enabled servers or localhosts.),-,-,Light Grey,0xC0C0C0FF,192,192,192,192,23,1920x1080,(16:9)
+[I] Init,-,26,Medium Grey,0x808080FF,128,128,128,128,24,1920x1200,(16:10)
+"(doesn’t allow the setting of the cvar from the console at all, but allows setting from a command line)",-,-,Dark Grey,0x404040FF,64,64,64,64,25,1920x1440,(4:3)
+[L] Latched,8/0,-,Black,0x000000FF,0,0,0,0,26,2048x1536,(4:3)
+"(initialisation required – cannot be changed without proper initialisation by Cvar_Get, which is executed at server restart. Will print a message - “%s will be changed upon restarting” when setting the cvar while the server is in operation)",-,-,Olive,0x808000FF,128,128,0,64,27,2560x1600,(16:10)
+[R] Read-Only,-,-,Maroon,0x800000FF,128,0,0,64,,,
+"(display only, cannot be set by user at all)",-,-,Purple,0x800080FF,128,0,128,64,,,
+[S] Server Info,-,-,Teal,0x008080FF,0,128,128,64,,,
+(server broadcasts to client – sent in response to front-end requests),-,-,Office Green,0x008000FF,0,128,0,64,,,
+[U] User Info,-,-,Navy Blue,0x000080FF,0,0,128,64,,,
+ (client broadcasts to server on connect or change),-,-,Coral Red,0XFF4040FF,255,64,64,160,,,
+[T],,,,,,,,,,,
+(saved to QL database),,,,,,,,,,,
+[W] Write-Protected,,,,,,,,,,,
+(cannot be set by the user at all),,,,,,,,,,,

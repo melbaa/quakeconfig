@@ -1,0 +1,274 @@
+A,,,,
+addbot,-,-,addbot <botname> [skill 1-5] [team] [msec delay] [altname],Adds a computer opponent.
+advert_done,-,-,advert_done,Exucutes after the standard pre-game advertisement has been shown.
+alias,-,-,alias <aliasname> [command],Sets an alias function for a given command.
+arena,-,-,"arena <file>.sp_arena
+Example: /arena nightmare",Load arena and bots from scripts/<file>.sp_arena.
+B,,,,
+bind,-,-,bind <key> [command],Assign an action to a key.
+bindlist,-,-,bindlist,Displays a list of the current binds as per repconfig.cfg.
+block,-,-,block [playername],Blocks the specified player’s in-game and website chat.
+blocklist,-,-,blocklist,Lists currently blocked players.
+C,,,,
+callvote,-,-,"Restart map:
+callvote map_restart
+
+Next Map:
+callvote nextmap
+
+Map Change:
+callvote map <mapname>
+
+Gametype Change:
+callvote g_gametype <n>
+
+Kick a Player:
+callvote kick <player>
+
+Kick Client:
+callvote clientkick <clientnum>
+
+Timelimit Change:
+callvote timelimit <time>
+
+Fraglimit Change:
+callvote fraglimit <frags>
+
+Shuffle Teams:
+callvote shuffle
+
+Team Size:
+callvote teamsize <number>",Call a vote.
+centerview,-,-,centerview,Snaps your view to the horizontal plane.
+changeVectors,-,-,changeVectors,"Supposedly ""change to vector defined by FIND_NEW_CHANGE_VECTORS as in vector graphics."" Either used internally by the rendering system, or is just legacy and no longer effectual. Either way it produces absolutely no effect."
+cinematic,-,-,cinematic <file name>,Plays the specified ROQ cinematic file. Cinematics are currently disabled in Quake Live.
+clear,-,-,clear,Clears all entries in the console.
+clearcvar,-,-,clearcvar,"Clears specified CVAR, if none set, then clears all."
+clientinfo,-,-,clientinfo,Displays information about clients.
+clientkick,-,-,clientkick <slot number>,Kicks a client by slot number.
+cmd,-,-,cmd <command>,Executes a given command.
+cmdlist,-,-,cmdlist <query>,"Displays queried commands, if none specified, lists all available commands."
+condump,-,-,condump <filename>.txt,Write the contents of the console to a file.
+configstrings,-,-,configstrings,Lists the current config strings in effect.
+confirmOrder,-,-,confirmOrder,Team Arena legacy – confirm team order received.
+connect,-,-,connect <serveraddress>,Connects to a server by server IP address.
+cvar_restart,-,-,cvar_restart,Restarts CVAR system.
+cvarlist,-,-,cvarlist <query>,"Shows a list of current CVARs starting with specified query string. If none set, displays all CVARs."
+D,,,,
+demo,-,-,demo <demoname>,Plays a demo file.
+denyOrder,-,-,denyOrder,Denies orders given to you by the team leader in team-based game types. (Team Arena)
+devmap,-,-,"devmap <mapname>
+Example: /devmap campgrounds",Opens a map in developer mode (all cheat CVARs enabled)
+dir,-,-,"dir [directory]/[extension]
+Example:
+/dir “maps/*.bsp”
+…to show all listed maps",Shows the files contained in a specific directory.
+disconnect,-,-,disconnect,Leave/disconnect from the current server.
+dropflag,-,-,dropflag,Allows the flag carrier to drop the flag in CTF.
+droppowerup,-,-,droppowerup,Drops a power-up item.
+dropweapon,-,-,dropweapon,Drops current weapon
+dumpuser,-,-,dumpuser <userid>,Displays information about a specific client.
+E,,,,
+echo,-,-,echo <string>,Prints a client-side message.
+exec,-,-,exec <filename>,Executes a specific file or command.
+F,,,,
+fdir,-,-,"fdir <filter>
+Usable meta characters:
+? = any single character
+* = any group of characters",Search game directory for certain file types.
+,,,,
+find,-,-,find <substring>,A case-sensitive search of the console entry database. Maximum number of entries set by con_matchlimit.
+follow,-,-,"follow <variable>
+<position> = follow player by place on scoreboard (eg: ‘follow 1’ to follow leader, ‘follow 2’ to follow the player in 2nd place, etc)
+<name> = follow player with the specific name.",Switch to follow mode when in spectator mode.
+forfeit,-,-,forfeit,Forfeits the game.
+fs_openedList,-,-,fs_openedList,List of opened PK3 files.
+fs_referencedList,-,-,fs_referencedList,"List of referenced PK3 files, from sv_referencedPakNames."
+G,,,,
+gfxinfo,-,-,gfxinfo,Lists extensive information about your graphics settings.
+give,C,-,"give [item]
+Example: /give all
+…gives all weapons.",Gives a specific item/weapon to the player
+globalservers,-,-,globalservers <master #1 0-1> <protocol> [keywords],???
+god,C,-,god,Toggles player invincibility.
+I,,,,
+imagelist,-,-,Imagelist,Lists textures used by current map and memory used up by these textures.
+in_restart,-,-,in_restart,Restarts all input device drivers.
+K,,,,
+kick,-,-,kick <playername>,Server command to kick a client.
+kill,-,-,kill,Kills your player (only if g_allowKill is set to 1 on the specific server).
+killserver,-,-,killserver,Ends your current server.
+L,,,,
+levelshot,-,-,levelshot,Shows the level intermission camera view and writes a 128x128 tga levelshot to levelshots/<mapname>.tga.
+listcmds,-,-,listcmds,Lists current commands.
+listcvars,-,-,listcvars,Lists current console variables.
+ListInputDevices,-,-,ListInputDevices,Lists input devices.
+loaddeferred,-,-,loaddeferred,"Loads deferred player models manually. This is done automatically by using cg_deferplayers 1. For example you are in pre-game on a clan arena server, and someone enters and joins your team. You have forceteammodel set to bitterman, but for some reason their model is showing up as the one they have set for themselves, say klesk. Issuing a 'loaddeferred' in the console will reset their model as you see it back to bitterman."
+loadhud,-,-,loadhud,Refreshes HUD file source as per cg_hudFiles. Useful when wanting to load a different HUD.
+localservers,-,-,localservers,Searches for local servers.
+M,,,,
+map,S R A,-,"map <mapname>
+Example: /map campgrounds",Loads the specified map.
+,,,,
+map_restart,-,-,map_restart,Resets the game on the current map in localhost.
+meminfo,-,-,meminfo,"Displays some registers, how many bits high/low, the total bits and memory statistics of the Z-buffer in the game."
+messagemode,-,-,messagemode,Public chat.
+messagemode2,-,-,messagemode2,Team chat.
+messagemode3,-,-,messagemode3,Send a message to your target.
+messagemode4,-,-,messagemode4,Send a message to your attacker.
+messagemode5,-,-,messagemode5,Send a reply to an online buddy (Quake Live’s buddy chat system).
+midiinfo,-,-,midiinfo,Displays MIDI system information.
+model,U A T,sarge,"model <model>
+Example: /model “keel/bright”",Sets your player model.
+Modelist,-,-,Modelist,"Displays a list of available screen resolution modes, options listed in appendix."
+modellist,-,-,modellist,Displays a list of models currently loaded by the game.
+music,-,-,"music <soundfile>
+Example: /music “music/sonic1.ogg”",Loops a specified sound file as background music.
+N,,,,
+net_restart,-,-,net_restart,Restarts the networking subsystem.
+nextOrder,-,-,nextOrder,Team Arena legacy for issuing the ‘next team order’. Ineffectual in Quake Live
+nextTeamMember,-,-,nextTeamMember,Used in Team Arena to view information on HUD about next team mate in player cycle.
+noclip,C,-,noclip,Enables no clip mode.
+notarget,C,-,notarget,Forces artificial intelligence to ignore you.
+P,,,,
+path,-,-,path,Lists current search paths.
+ping,-,-,ping [server],Pings a specific server.
+play,-,-,play <soundfile>,Plays a specific sound file.
+players,-,-,players,Lists current players in server.
+postprocess_restart,-,-,postprocess_restart,Restarts the post process subsystem.
+prevTeamMember,-,-,prevTeamMember,Used in Team Arena to view information on HUD about previous team mate in player cycle.
+print,-,-,print [message],Displays a local message in the console and on the heads-up display.
+Q,,,,
+quit,-,-,quit,Exit the game.
+R,,,,
+ragequit,-,-,ragequit,Quit the game and display ‘<yourname> ragequits’.
+readyup,-,-,readyup,"Toggles your ready-up status in warm up rounds. Once the amount of ‘ready’ players meets or exceeds the server’s sv_warmupReadyPercentage, the game will begin."
+reconnect,-,-,reconnect,Reconnects to the last server you connected to.
+record,-,-,record <demoname>,Start recording a demo.
+reply,-,-,reply <message>,Reply to chat messages you received from an online buddy.
+reset,-,-,reset [cvar],Resets a CVAR.
+S,,,,
+s_info,-,-,s_info,Displays sound information.
+s_list,-,-,s_list,Lists all currently loaded sound files.
+s_stop,C,-,s_stop,Stops currents sounds from being played.
+say,-,-,say <message>,Ordinary in-game message command.
+say_team,-,-,"say_team <message>
+Available chat tokens:
+#h - Current health value
+#a - Current armor value
+#w - Current weapon & ammo count
+## - To print the character '#'",In-game team message command.
+screenshot,-,-,screenshot <file name>,"Takes a screenshot in TGA file format. If no file name is set, screenshots will be named automatically."
+screenshotJPEG,-,-,screenshotJPEG <filename>,"Takes a screenshot in JPG file format. If no file name is set, screenshots will be named automatically."
+screenshotSocial,-,-,screenshotSocial,Takes a screenshot and uploads it to your social media pages.
+sectorlist,-,-,sectorlist,Displays a list of the number of entities in the different sectors of the map with regards to the current position.
+serverinfo,-,-,serverinfo,Prints out server information list to the console.
+set,-,-,set <variable> <value>,"Set Variable:
+Assigns a value to an existing CVAR or assigns or creates a new VSTR for your current session."
+seta,-,-,seta <variable> <value>,"Set Variable to Archive:
+Assigns a value to an existing CVAR or assigns or creates a new VSTR for your current session. Also writes the setting to your configuration so that it is applied every time you run the game."
+setenemycolor,-,-,???,???
+setenv,-,-,???,???
+setteamcolor,-,-,???,???
+setviewpos,-,-,setviewpos <x> <y> <z> <yaw>,"Sets view at specified point, in relation to map coordinates."
+shaderlist,-,-,shaderlist,Displays a list of currently loaded shaders.
+showip,-,-,"showip [0|1]
+0 = Hide
+1 = Show",Shows your IP address. This will be the same as what appears in your network settings. If you are connecting through a router it will show the IP your router has assigned to you.
+sizedown,-,-,sizedown,Decreases the size of the in-game display area.
+sizeup,-,-,sizeup,Increases the size of the in-game display area.
+skinlist,-,-,skinlist,Displays a list of skin files that are currently loaded with the corresponding model surfaces.
+snd_restart,-,-,snd_restart,Restarts the sound system.
+spdevmap,-,-,spdevmap <mapname>,Selects a map to open in single player developer mode (cheats enabled).
+spec,-,-,"spec [element]
+FC = follow a flag carrier
+RED = follow a red team player
+BLUE = follow a blue team player
+PU = follow a player who has a power-up",Cycle through players in spectator mode.
+spmap,-,-,"spmap <mapname>
+Example: /spmap campgrounds","Runs a specific map along with the applicable arena file settings, i.e: single-player match with bots, if included in an arena file."
+startOrbit,-,-,startOrbit,A 3rd person orbital view of your player.
+status,-,-,status,Status of currently connected server.
+stoprecord,-,-,stoprecord,Stops the current demo recording.
+systeminfo,-,-,systeminfo,Lists the server configuration.
+T,,,,
+taskCamp,-,-,taskCamp,Voice message your target team mate that you are camping. (Team Arena)
+taskDefense,-,-,taskDefense,Voice message your target team mate that you are defending. (Team Arena)
+taskEscort,-,-,tastEscort,Voice message your target team mate that you are escorting the flag carrier. (Team Arena)
+taskFollow,-,-,taskFollow,Voice message your target team mate that you are following. (Team Arena)
+taskOffense,-,-,taskOffense,Voice message your target team mate that you are attacking. (Team Arena)
+taskOwnFlag,-,-,taskOwnFlag,Voice message your target team mate that you have the flag. (Team Arena)
+taskPatrol,-,-,taskPatrol,Voice message your target team mate that you are patrolling. (Team Arena)
+taskRetrieve,-,-,taskRetrieve,Voice message your target team mate that you are retrieving the flag. (Team Arena)
+taskSuicide,-,-,taskSuicide,Voice message your target (bot) team mate to commit suicide. (Team Arena)
+tauntDeathInsult,-,-,tauntDeathInsult,Random voice insult when you die. (Team Arena)
+tauntGauntlet,-,-,tauntGauntlet,Random voice insult when you die by gauntlet. (Team Arena)
+tauntKillInsult,-,-,tauntKillInsult,Random voice insult when you frag your opponent. (Team Arena)
+tauntPraise,-,-,tauntPraise,Random voice praise to your opponent. (Team Arena)
+tauntTaunt,-,-,tauntTaunt,Voice taunt. (Team Arena)
+tcmd,-,-,tcmd,Displays the current target commands or code address.
+team,-,-,"team <team>
+A = random team
+B = blue team
+F = free 
+R = red team
+S = spectate",Join a team (team change limited to a 5 second delay between changes)
+teamtask,U T,0,"teamtask [0-7]
+0 = default (offense)
+1 = offense
+2 = defense
+3 = patrol
+4 = following
+5 = retrieving
+6 = escorting
+7 = camping",Displays the current task you have been assigned. (Team Arena)
+tell_attacker,-,-,tell_attacker <message>,Sends a message to your attacker.
+tell_buddy,-,-,tell_buddy <playername> <message>,Sends a message to a specific online buddy.
+tell_target,-,-,tell_target <message>,Sends a message to a targeted player.
+toggle,-,-,toggle <cvar>,"Toggles a variable (if applicable). May be able to toggle certain write protected CVARs, too."
+togglechathistory,-,-,togglechathistory,Toggles displaying of chat history screen.
+toggleconsole,-,-,toggleconsole,Toggles displaying of console.
+touchFile,-,-,touchFile <file>,Makes a file a zero-byte file.
+U,,,,
+unalias,-,-,unalias <alias>,Clears a specific alias.
+unaliasall,-,-,unaliasall,Clears all aliases.
+unbind,-,-,unbind <key>,Unbind a binded key.
+unbindall,-,-,unbindall,Unbinds all key binds.
+unblock,-,-,unblock [playername],Unblocks a blocked player.
+userinfo,-,-,userinfo,Lists user information.
+V,,,,
+vid_restart,-,-,vid_restart,Restarts video system.
+viewpos,-,-,viewpos,"Displays player coordinates in map, in the form of: (X Y Z) : XY-Angle"
+vosay,-,-,vosay <voice script>,General voice communication.
+vosay_team,-,-,vosay_team <voice script>,Team voice communication.
+vote,-,-,"vote <y/n>
+yes = yes vote
+no = no vote",Sets your vote for the current vote calling.
+votell,-,-,votell [message],Voice chat to a player.
+vsay,-,-,vosay [message],Voice chat to all players.
+vsay_team,-,-,vsay_team [message],Voice chat to team.
+vstr,-,-,vstr [name],Execute a specific VSTR.
+vtaunt,-,-,vtaunt [message],Voice taunt to all players.
+vtell,-,-,vtell [message],Voice chat to a specific player.
+vtell_attacker,-,-,vtell_attacker [message],Voice chat to attacker.
+vtell_target,-,-,vtell_target [message],Voice chat to target player.
+W,,,,
+wait,-,-,"wait <delay>
+(if none set, delay = 1)",Frame delay for remaining buffered commands.
+weapnext,-,-,weapnext,"Selects next weapon in weapon cycle (by default, no weapons without ammo are selected, including gauntlet)."
+weapon,-,-,"weapon [1-13]
+1 = gauntlet
+2 = machine gun
+3 = shotgun
+4 = grenade launcher
+5 = rocket launcher
+6 = lightning gun
+7 = railgun
+8 = plasmagun
+9 = BFG10K
+10 = grappling hook
+11 = nailgun
+12 = proximity mine launcher
+13 = chaingun",Selects a specific weapon.
+weapprev,-,-,weapprev,"Selects previous weapon in weapon cycle (by default, no weapons without ammo are selected, including gauntlet)."
+writeconfig,-,-,writeconfig [<configname>.cfg],Writes settings to a configuration file.

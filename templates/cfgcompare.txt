@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="/static/ico/favicon.png" />
+
+    <title>${title}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/quakeconfig/static/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Optional theme -->
+    <!--
+      <link rel="stylesheet" href="/quakeconfig/static/css/bootstrap-theme.min.css" />
+    -->
+    
+    
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+
+        <h1>${title}</h1>
+Upload one or two .cfg files and be greeted by a wall of text. <p>
+
+Main features and usecases - learn about variables and commands; 
+compare two configs side by side; find unused variables. <p>
+
+On my computer the configs are in C:\Users\melba\AppData\LocalLow\id 
+Software\quakelive\home\baseq3. You can download 
+[<a href="/static/mel_example.cfg">an example config</a>] and submit it to the site to see how it works. <p>
+
+Credits to <b>regurge</b> 
+[<a href="http://www.regurge.at/ql/">site</a>,
+<a href="http://www.quakelive.com/#!profile/summary/regurge">ql</a>] for providing most of the data.
+<br>
+See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo's [<a href="http://www.quakelive.com/forum/showthread.php?831-The-Ultimate-Quake-Live-Guide">guide</a>]. <p>
+
+      </div>
+    </div>
+
+    
+    <div class="container">
+      
+      <%doc>
+        <div class="alert alert-danger">
+          <h1> MAINTENANCE TODAY. WONT WORK </h1>
+        </div>
+      </%doc>
+      
+      
+      Maximum file size is ${max_file_size/ 1024**2} MB.
+      
+      
+        
+      <form id="uploadcfg" action="" method="post" enctype='multipart/form-data'>
+        
+        <div class="form-group">
+          <label for="cfgB">
+            Upload configuration of player A.
+          </label>
+          <input 
+            type="file" name="cfgA" id="cfgA" class="form-control"/> 
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="cfgB">
+            Upload configuration of player B.
+          </label>
+          <input 
+            type="file" name="cfgB" id="cfgB" class="form-control"/> 
+        </div>
+        
+        <label>
+          <input type="checkbox" name='showdiff' value='showdiff'>
+            Show only different values
+        </label>
+        <input class="btn btn-default" type="submit" value="analyze" />
+      </form>
+      <p />
+      
+      <p>
+      
+      
+      
+      <ul class="nav nav-pills nav-stacked">
+      %for section in sections:
+        <%
+          longname = section[0].upper()
+          shortname = longname.split()[0] #take first word
+        %>
+        <li><a href="#${shortname}">${longname}</a></li>
+        
+        
+      %endfor
+      <li><a href="#aliases">ALIASES</a></li>
+      <li><a href="#binds">BINDS</a></li>
+      <li><a href="#uncat">UNCATEGORIZED</a></li>
+      <li><a href="#unknown">UNKNOWN</a></li>
+      </ul>
+      
+      <h2>Note mouse settings are meaningless without the mouse DPI.</h2>
+      %for section in sections:
+        <%
+          longname = section[0].upper()
+          shortname = longname.split()[0] #take first word
+        %>
+        <a name="${shortname}"></a>
+        <h2>${longname}</h2>
+        %for cvar in section[1:]:
+          %if cvar in report_section:
+            <%
+              cvar_data = report_section[cvar]
+            %>
+            
+            <h4><b>${cvar}</b> ${cvar_data['player A'] | h} <span class='text-warning'>${cvar_data['player B'] | h} </span> </h4>
+            
+            <%
+              attrs = cvar_data['attrs']
+            %>
+            %for attr in attrs:
+              ${attr} - ${attrs[attr] | h} <br>
+            %endfor
+          %endif
+        %endfor
+      %endfor
+      
+      
+      <a name="aliases"></a>
+      <h2>ALIASES</h2>
+      
+      <table class="table table-striped">
+       
+        <thead>
+          <tr>
+            <th>
+            alias
+            </th>
+               
+            <th>
+            player A
+            </th>
+
+            <th>
+            player B
+            </th>
+          </tr>
+        </thead>
+       
+        %for key in report_aliases:
+        
+        <tr>
+          
+          <td>
+            ${key | h}
+          </td>
+        
+          <td>
+            ${report_aliases[key][0] | h} 
+          </td>
+          
+          
+          <td>
+            ${report_aliases[key][1] | h} 
+          </td>
+        </tr>
+            
+            
+        %endfor
+       
+      </table>
+      
+      
+      <a name="binds"></a>
+      <h2>BINDS</h2>
+      
+      
+      <table class="table table-striped">
+       
+        <thead>
+          <tr>
+            <th>
+            key
+            </th>
+            
+            
+            <th>
+            player A
+            </th>
+            
+            
+            <th>
+            player B
+            </th>
+          </tr>
+        </thead>
+       
+        %for key in report_binds:
+        
+        <tr>
+          
+          <td>
+            ${key | h}
+          </td>
+        
+          <td>
+            ${report_binds[key][0] | h} 
+          </td>
+          
+          
+          <td>
+            ${report_binds[key][1] | h} 
+          </td>
+        </tr>
+            
+            
+        %endfor
+       
+      </table>
+      
+      
+      <a name="uncat"></a>
+      <h2>UNCATEGORIZED, BUT KNOWN</h2>
+      <h3>Give me feedback. Which category do you expect them to be in?</h3>
+       %for cvar in sorted(report_uncat):
+       
+        <%
+          uncat_data = report_uncat[cvar]
+          attrs = uncat_data['attrs']
+        %>
+        <h4><b>${cvar}</b> ${uncat_data['player A'] | h} <span class='text-warning'>${uncat_data['player B'] | h} </span> </h4>
+        %for attr in attrs:
+          ${attr} - ${attrs[attr] | h} <br>
+        %endfor
+
+      %endfor
+      
+      
+      <a name="unknown"></a>
+      <h2>UNKNOWN</h2>
+      <h3>not enough data; misspelled; old quake 3 variables; custom cvars</h3>
+      
+      %for cvar in report_unknown:
+        <%
+          unknown_data = report_unknown[cvar]
+        %>
+        <h4><b>${cvar}</b> ${unknown_data[0] | h} <span class='text-warning'>${unknown_data[1] | h} </span> </h4>
+      %endfor
+      
+      <p>
+    
+    
+    
+    
+    
+    ##<h2>website debug vars, ignore</h2>
+    
+    ##%for tok in tokensA:
+    ##  ${tok | h} <br>
+    ##%endfor
+    
+    <p>
+    
+    ##%for tok in tokensB:
+    ##  ${tok | h} <br>
+    ##%endfor
+    
+    ##%for ident in report_section:
+    ##  ${ident | h} - ${report_section[ident]|h} <br>
+    ##%endfor
+    
+    ##AAA REPORT UNCAT ${report_uncat} <br>
+    ##%for ident in report_uncat:
+    ##  ${ident | h} - ${report_uncat[ident]|h} <br>
+    ##%endfor
+    
+    ##%for dbgvar in debugargs:
+    ##  dbgvar: ${dbgvar | h} <br>
+    ##  type: ${dbgvar.__class__.__name__ | h} <br>
+    ##  dir(): ${dir(dbgvar)} <p>
+    ##  %if dbgvar is not None and hasattr(dbgvar, 'file'):
+    ##    ${dbgvar.file} <br>
+    ##  %endif
+    ##%endfor
+      
+      
+      
+      
+      
+    </div>
+    <div class="container">
+      <!-- Example row of columns -->
+      
+     
+      <hr />
+      <footer id="footer">
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <a href="http://melbalabs.com">melbalabs.com</a><br />
+        
+      </footer>
+    </div> <!-- /container -->
+    
+    
+    <!--
+      <script src="/static/js/jquery.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+    -->
+  </body>
+</html>
+
+
+      
