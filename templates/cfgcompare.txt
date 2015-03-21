@@ -307,8 +307,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
     
     
     <!--
-      <script src="/static/js/jquery.js"></script>
-      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/quakeconfig/static/js/jquery.js"></script>
+      <script src="/quakeconfig/static/js/bootstrap.min.js"></script>
     -->
   </body>
 </html>
