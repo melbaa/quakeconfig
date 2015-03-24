@@ -83,10 +83,9 @@ class Quakeconfig:
             report_uncat=report_uncat,
             report_unknown=report_unknown)
     
-    
+    @cherrypy.expose
     def index(self, *args, **kwargs): 
         rendered_text = self._render(**kwargs)    
         return rendered_text
-    index.exposed = True
 
   

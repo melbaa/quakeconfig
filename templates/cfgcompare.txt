@@ -32,7 +32,7 @@ compare two configs side by side; find unused variables. <p>
 
 On my computer the configs are in C:\Users\melba\AppData\LocalLow\id 
 Software\quakelive\home\baseq3. You can download 
-[<a href="/static/mel_example.cfg">an example config</a>] and submit it to the site to see how it works. <p>
+[<a href="/quakeconfig/static/configs/mel_example.cfg">an example config</a>] and submit it to the site to see how it works. <p>
 
 Credits to <b>regurge</b> 
 [<a href="http://www.regurge.at/ql/">site</a>,
