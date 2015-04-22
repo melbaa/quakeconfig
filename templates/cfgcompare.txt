@@ -21,6 +21,14 @@
   </head>
 
   <body>
+  
+    <div class="container">
+      <ul class="nav nav-pills">
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+  
     <div class="jumbotron">
       <div class="container">
 
