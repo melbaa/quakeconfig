@@ -61,12 +61,12 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       </%doc>
       
       
-      Maximum file size is ${max_file_size/ 1024**2} MB.
       
       
         
       <form id="uploadcfg" action="" method="post" enctype='multipart/form-data'>
-        
+      Maximum file size is ${max_file_size/ 1024**2} MB.
+
         <div class="form-group">
           <label for="cfgB">
             Upload configuration of player A.
@@ -96,7 +96,7 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       
       
       
-      <ul class="nav nav-pills nav-stacked">
+      <ul class="nav nav-pills">
       %for section in sections:
         <%
           longname = section[0].upper()
@@ -118,8 +118,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
           longname = section[0].upper()
           shortname = longname.split()[0] #take first word
         %>
-        <a name="${shortname}"></a>
-        <h2>${longname}</h2>
+        <a id="${shortname}"></a>
+        <h2><a href="#uploadcfg">${longname}</a></h2>
         %for cvar in section[1:]:
           %if cvar in report_section:
             <%
@@ -139,8 +139,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       %endfor
       
       
-      <a name="aliases"></a>
-      <h2>ALIASES</h2>
+      <a id="aliases"></a>
+      <h2><a href="#uploadcfg">ALIASES</a></h2>
       
       <table class="table table-striped">
        
@@ -184,8 +184,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       </table>
       
       
-      <a name="binds"></a>
-      <h2>BINDS</h2>
+      <a id="binds"></a>
+      <h2><a href="#uploadcfg">BINDS</a></h2>
       
       
       <table class="table table-striped">
@@ -232,8 +232,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       </table>
       
       
-      <a name="uncat"></a>
-      <h2>UNCATEGORIZED, BUT KNOWN</h2>
+      <a id="uncat"></a>
+      <h2><a href="#uploadcfg">UNCATEGORIZED, BUT KNOWN</a></h2>
       <h3>Give me feedback. Which category do you expect them to be in?</h3>
        %for cvar in sorted(report_uncat):
        
@@ -249,8 +249,8 @@ See also Lorfa's [<a href="http://www.regurge.at/ql/lorfa">guide</a>] and Yakumo
       %endfor
       
       
-      <a name="unknown"></a>
-      <h2>UNKNOWN</h2>
+      <a id="unknown"></a>
+      <h2><a href="#uploadcfg">UNKNOWN</a></h2>
       <h3>not enough data; misspelled; old quake 3 variables; custom cvars</h3>
       
       %for cvar in report_unknown:
